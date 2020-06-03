@@ -4,6 +4,10 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import com.Kenny.Entity.Post;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
 public class PostDAO {
     public static Map<Integer, Post> posts;
 
@@ -19,5 +23,9 @@ public class PostDAO {
 
     public Collection<Post> getAllPosts(){
         return this.posts.values();
+    }
+
+    public Post getPostById(int id){
+        return this.posts.get(id);
     }
 }
