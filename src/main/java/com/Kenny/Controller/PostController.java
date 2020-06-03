@@ -34,4 +34,9 @@ public class PostController {
     public void deletePostById(@RequestBody Post post){
         postService.updatePost(post);
     }
+
+    @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void addPost(@RequestBody Post post){
+        postService.addPost(post);
+    }
 }

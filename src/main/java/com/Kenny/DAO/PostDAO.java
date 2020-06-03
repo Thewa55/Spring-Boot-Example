@@ -40,4 +40,8 @@ public class PostDAO {
         update.setPost(post.getPost());
         posts.put(post.getId(), post);
     }
+
+    public void addPost(Post post) {
+        this.posts.put(post.getId(), post);
+    }
 }

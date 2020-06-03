@@ -27,4 +27,8 @@ public class PostService {
     public void updatePost(Post post){
         this.postDAO.updatePost(post);
     }
+
+    public void addPost(Post post) {
+        this.postDAO.addPost(post);
+    }
 }
