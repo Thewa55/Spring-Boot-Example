@@ -1,47 +1,17 @@
 package com.Kenny.DAO;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import com.Kenny.Entity.Post;
-import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 
-@Repository
-public class PostDAO {
-    public static Map<Integer, Post> posts;
+public interface PostDAO {
+    Collection<Post> getAllPosts();
 
-    static {
-        posts = new HashMap<Integer, Post>(){
-            {
-                put(1, new Post(1, "Kenny" ,"Hello!", "Hello World!"));
-                put(2, new Post(2, "Henry" ,"Hm...", "Spring Boot is amazing"));
-                put(3, new Post(3, "Jessi" ,"Wow..", "This actually works"));
-            }
-        };
-    }
+    Post getPostById(int id);
 
-    public Collection<Post> getAllPosts(){
-        return this.posts.values();
-    }
+    void deletePostById(int id);
 
-    public Post getPostById(int id){
-        return this.posts.get(id);
-    }
+    void updatePost(Post post);
 
-    public void deletePostById(int id) {
-        this.posts.remove(id);
-    }
-
-    public void updatePost(Post post){
-        Post update = posts.get(post.getId());
-        update.setName(post.getName());
-        update.setTitle(post.getTitle());
-        update.setPost(post.getPost());
-        posts.put(post.getId(), post);
-    }
-
-    public void addPost(Post post) {
-        this.posts.put(post.getId(), post);
-    }
+    void addPost(Post post);
 }

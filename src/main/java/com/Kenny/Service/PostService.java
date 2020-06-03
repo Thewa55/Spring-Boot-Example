@@ -5,11 +5,13 @@ import java.util.Collection;
 import com.Kenny.DAO.PostDAO;
 import com.Kenny.Entity.Post;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PostService {
     @Autowired
+    @Qualifier("implantation")
     private PostDAO postDAO;
 
     public Collection<Post> getAllPosts(){
