@@ -26,4 +26,9 @@ public class PostController {
     public Post getPostById(@PathVariable("id") int id){
         return postService.getPostById(id);
     }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void deletePostById(@PathVariable("id") int id){
+        postService.deletePostById(id);
+    }
 }

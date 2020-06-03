@@ -19,4 +19,8 @@ public class PostService {
     public Post getPostById(int id){
         return this.postDAO.getPostById(id);
     }
+
+    public void deletePostById(int id) {
+        this.postDAO.deletePostById(id);
+    }
 }

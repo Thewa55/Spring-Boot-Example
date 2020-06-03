@@ -16,7 +16,7 @@ public class PostDAO {
             {
                 put(1, new Post(1, "Kenny" ,"Hello!", "Hello World!"));
                 put(2, new Post(2, "Henry" ,"Hm...", "Spring Boot is amazing"));
-                put(3, new Post(3, "Jessi" ,"Wow..", "I'm a bitch"));
+                put(3, new Post(3, "Jessi" ,"Wow..", "This actually works"));
             }
         };
     }
@@ -27,5 +27,9 @@ public class PostDAO {
 
     public Post getPostById(int id){
         return this.posts.get(id);
+    }
+
+    public void deletePostById(int id) {
+        this.posts.remove(id);
     }
 }
