@@ -32,4 +32,12 @@ public class PostDAO {
     public void deletePostById(int id) {
         this.posts.remove(id);
     }
+
+    public void updatePost(Post post){
+        Post update = posts.get(post.getId());
+        update.setName(post.getName());
+        update.setTitle(post.getTitle());
+        update.setPost(post.getPost());
+        posts.put(post.getId(), post);
+    }
 }

@@ -3,10 +3,8 @@ package com.Kenny.Controller;
 import com.Kenny.Entity.Post;
 import com.Kenny.Service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -30,5 +28,10 @@ public class PostController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public void deletePostById(@PathVariable("id") int id){
         postService.deletePostById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void deletePostById(@RequestBody Post post){
+        postService.updatePost(post);
     }
 }

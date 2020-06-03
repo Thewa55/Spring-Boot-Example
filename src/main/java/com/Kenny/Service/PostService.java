@@ -23,4 +23,8 @@ public class PostService {
     public void deletePostById(int id) {
         this.postDAO.deletePostById(id);
     }
+
+    public void updatePost(Post post){
+        this.postDAO.updatePost(post);
+    }
 }
